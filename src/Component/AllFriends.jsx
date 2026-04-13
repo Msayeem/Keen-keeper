@@ -2,7 +2,8 @@ import React from 'react';
 
 const AllFriends = ({friend}) => {
     return (
-        <div className='text-center space-y-1.5'>
+        <div className='hover:bg-green-100 rounded-3xl active:opacity-70 transition-[0.30s]'>
+            <div className='text-center space-y-1.5  hover:scale-90 transition-[0.40s]'>
             <img className='rounded-full mx-auto' src={friend.picture} alt="" />
             <h3 className='font-semibold'>{friend.name}</h3>
             <p>{friend.days_since_contact}d ago</p>
@@ -16,6 +17,7 @@ const AllFriends = ({friend}) => {
         </span>
 
         <span className={`${friend.status=='Almost Due' ? 'badge badge-warning': ''} ${friend.status=='Overdue' ? 'badge badge-error text-white' : ''} ${friend.status=='On Track' ? 'badge badge-success':''} `}>{friend.status}</span>
+        </div>
         </div>
     );
 };
