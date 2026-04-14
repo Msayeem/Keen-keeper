@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const AllFriends = ({friend}) => {
     return (
-        <div className='hover:bg-green-100 rounded-3xl active:opacity-70 transition-[0.30s]'>
+        <Link to={`/friend-details/${friend.id}`} className='hover:bg-green-100 rounded-3xl active:opacity-70 transition-[0.30s]'>
             <div className='text-center space-y-1.5  hover:scale-90 transition-[0.40s]'>
             <img className='rounded-full mx-auto' src={friend.picture} alt="" />
             <h3 className='font-semibold'>{friend.name}</h3>
@@ -18,7 +19,7 @@ const AllFriends = ({friend}) => {
 
         <span className={`${friend.status=='Almost Due' ? 'badge badge-warning': ''} ${friend.status=='Overdue' ? 'badge badge-error text-white' : ''} ${friend.status=='On Track' ? 'badge badge-success':''} `}>{friend.status}</span>
         </div>
-        </div>
+        </Link>
     );
 };
 

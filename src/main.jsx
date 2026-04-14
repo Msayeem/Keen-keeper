@@ -9,6 +9,8 @@ import Root from './Component/Root.jsx';
 import Home from './Component/Home.jsx';
 import Timeline from './Component/Timeline.jsx';
 import Stats from './Component/Stats.jsx';
+import Context from './Component/Context.jsx';
+import FriendDetails from './Component/FriendDetails.jsx';
 
 const router=createHashRouter([
 {
@@ -26,6 +28,11 @@ const router=createHashRouter([
     {
       path:'/stats',
       Component:Stats
+    },
+    {
+      path:'/friend-details/:id',
+      loader:()=>fetch(`${import.meta.env.BASE_URL}data.json`),
+      Component:FriendDetails
     }
   ]
 }
@@ -33,6 +40,8 @@ const router=createHashRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router}></RouterProvider>
+   <Context>
+     <RouterProvider router={router}></RouterProvider>
+   </Context>
   </StrictMode>,
 )
