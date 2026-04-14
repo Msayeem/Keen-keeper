@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
 import { FriendContext } from './Context';
-import { useLoaderData, useParams } from 'react-router';
+import { Link, useLoaderData, useParams } from 'react-router';
 import { RiNotificationSnoozeLine } from 'react-icons/ri';
 import { IoArchiveOutline, IoVideocamOutline } from 'react-icons/io5';
 import { MdDeleteOutline, MdOutlineMessage } from 'react-icons/md';
 import { FiPhoneCall } from 'react-icons/fi';
+import { toast } from 'react-toastify';
 
 const FriendDetails = () => {
     let {call, setCall, text, setText, video, setVideo}=useContext(FriendContext);
@@ -13,6 +14,19 @@ const FriendDetails = () => {
    
 
     let expectedFriends=friends.find(friend=> friend.id==id);
+
+    const handleCall=()=>{
+setCall([...call, expectedFriends]);
+toast.success('New Call added to Timeline')
+    };
+    const handleText=()=>{
+setText([...text, expectedFriends]);
+toast.success('New Text added to Timeline')
+    };
+    const handleVideo=()=>{
+setVideo([...video, expectedFriends]);
+toast.success('New Video added to Timeline')
+    };
    
     return (
         <div className='pt-15 lg:w-[70%] md:w-[85%] w-[90%] mx-auto grid grid-cols-4 '>
@@ -64,16 +78,16 @@ const FriendDetails = () => {
 <h1 className='text-[#244D3F] font-semibold'>Quick Check-In</h1>
 
 <div className='flex justify-around py-8'>
-    <button className='flex flex-col items-center gap-1 text-[18px] font-semibold'>
+    <button onClick={handleCall} className='hover:scale-110 hover:opacity-[0.7] active:opacity-[0.5] transition-[0.30s] flex flex-col items-center gap-1 text-[18px] font-semibold'>
         <FiPhoneCall></FiPhoneCall>
         Call
     </button>
-    <button className='flex flex-col items-center gap-1 text-[18px] font-semibold'>
+    <button  onClick={handleText} className= 'hover:scale-110 hover:opacity-[0.7] active:opacity-[0.5] transition-[0.30s] flex flex-col items-center gap-1 text-[18px] font-semibold'>
 
 <MdOutlineMessage></MdOutlineMessage>
         Text
     </button>
-    <button className='flex flex-col items-center gap-1 text-[18px] font-semibold'>
+    <button  onClick={handleVideo} className='hover:scale-110 hover:opacity-[0.7] active:opacity-[0.5] transition-[0.30s] flex flex-col items-center gap-1 text-[18px] font-semibold'>
         <IoVideocamOutline></IoVideocamOutline>
         Video
     </button>

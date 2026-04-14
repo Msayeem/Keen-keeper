@@ -11,6 +11,7 @@ import Timeline from './Component/Timeline.jsx';
 import Stats from './Component/Stats.jsx';
 import Context from './Component/Context.jsx';
 import FriendDetails from './Component/FriendDetails.jsx';
+import { ToastContainer } from 'react-toastify';
 
 const router=createHashRouter([
 {
@@ -42,6 +43,7 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
    <Context>
      <RouterProvider router={router}></RouterProvider>
+     <ToastContainer></ToastContainer>
    </Context>
   </StrictMode>,
 )
