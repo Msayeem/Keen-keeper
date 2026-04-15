@@ -22,7 +22,7 @@ let [sort, setSort]=useState('All');
 <h1 className='font-bold text-3xl pt-5 '>Timeline</h1>
 
 {
-    (call.length==0 && text.length==0 && video.length==0) ? <p>Add friends to see in Timeline</p> : 
+    (call.length==0 && text.length==0 && video.length==0) ? <p className='text-center pt-20'>No connections yet.</p> : 
     <div className='space-y-7'>
         <div className="dropdown dropdown-start mt-3 ">
   <div tabIndex={0} role="button" className="btn m-1">Sort ⬇️</div>

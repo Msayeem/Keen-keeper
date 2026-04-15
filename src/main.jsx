@@ -12,6 +12,7 @@ import Stats from './Component/Stats.jsx';
 import Context from './Component/Context.jsx';
 import FriendDetails from './Component/FriendDetails.jsx';
 import { ToastContainer } from 'react-toastify';
+import Error from './Component/Error.jsx';
 
 const router=createHashRouter([
 {
@@ -35,7 +36,8 @@ const router=createHashRouter([
       loader:()=>fetch(`${import.meta.env.BASE_URL}data.json`),
       Component:FriendDetails
     }
-  ]
+  ],
+  errorElement:<Error></Error>
 }
 ])
 

@@ -29,10 +29,11 @@ toast.success('New Video added to Timeline')
     };
    
     return (
-        <div className='pt-15 lg:w-[70%] md:w-[85%] w-[90%] mx-auto grid grid-cols-4 '>
+        <div className='pt-15 lg:w-[70%] md:w-[85%] w-[90%] mx-auto grid md:grid-cols-4  gap-5'>
             
 <div className='text-center col-span-1 space-y-2.5'>
   <img className='mx-auto rounded-full' src={expectedFriends.picture} alt="" />
+  <h1 className='font-semibold text-[18px]'>{expectedFriends.name}</h1>
   <span className={`${expectedFriends.status=='Almost Due' ? 'badge badge-warning': ''} ${expectedFriends.status=='Overdue' ? 'badge badge-error text-white' : ''} ${expectedFriends.status=='On Track' ? 'badge badge-success':''} `}>{expectedFriends.status}</span>
   <span className='flex justify-center gap-2'>
             {expectedFriends.tags.map((tag, index)=>
@@ -42,7 +43,7 @@ toast.success('New Video added to Timeline')
             )}
         </span>
         <p className='text-[#64748B]'><em>"{expectedFriends.bio}"</em></p>
-<p className='text-[#64748B] text-[16px]'>Preferred: email</p>
+<p className='text-[#64748B] text-[16px]'>Email: {expectedFriends.email}</p>
 
 <div className='space-y-3 py-6 flex flex-col items-center'>
     <button className='flex items-center gap-1 font-medium'><RiNotificationSnoozeLine></RiNotificationSnoozeLine> Snooze 2 weeks</button>

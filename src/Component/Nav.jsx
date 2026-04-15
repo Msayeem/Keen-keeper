@@ -12,8 +12,8 @@ return isActive && 'bg-[#244D3F] text-white rounded-[10px]'
 }
 
     return (
-        <nav className='flex items-center justify-between lg:w-[85%] w-[90%] mx-auto py-3'>
-            <NavLink to={'/'} className='font-bold text-2xl'>Keen<span className='font-semibold text-[#244D3F]'>Keeper</span></NavLink>
+        <nav className='flex items-center justify-between lg:w-[85%] w-[90%] mx-auto py-3 md:flex-row flex-col gap-5'>
+         <NavLink to={'/'}><h1 className='font-bold text-2xl'>Keen<span className='font-semibold text-[#244D3F]'>Keeper</span></h1></NavLink>
 
             <div className='flex items-center gap-3'>
                 <NavLink to={'/'} className={handleActive}><button className='px-3 py-2  font-medium flex items-center gap-1'><IoHomeOutline></IoHomeOutline>Home</button></NavLink>
