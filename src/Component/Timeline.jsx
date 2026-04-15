@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { FriendContext } from './Context';
 import i2 from '../../assets/call.png'
 import i3 from '../../assets/text.png'
@@ -14,26 +14,33 @@ let time = new Date().toLocaleDateString('en-GB', {
     year: 'numeric'
 });
 
+let [sort, setSort]=useState('All');
+
     return (
-        <div className='lg:w-[70%] md:w-[80%] w-[90%] mx-auto space-y-7'>
+        <div className='pb-10 lg:w-[70%] md:w-[80%] w-[90%] mx-auto'>
 
 <h1 className='font-bold text-3xl pt-5 '>Timeline</h1>
 
-<div className="dropdown dropdown-start">
-  <div tabIndex={0} role="button" className="btn m-1">Click ⬇️</div>
+{
+    (call.length==0 && text.length==0 && video.length==0) ? <p>Add friends to see in Timeline</p> : 
+    <div className='space-y-7'>
+        <div className="dropdown dropdown-start mt-3 ">
+  <div tabIndex={0} role="button" className="btn m-1">Sort ⬇️</div>
   <ul tabIndex="-1" className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm">
-    <li><a>Item 1</a></li>
-    <li><a>Item 2</a></li>
+    <li><a onClick={()=>setSort('All')}>All</a></li>
+    <li><a onClick={()=>setSort('Call')}>Call</a></li>
+    <li><a onClick={()=>setSort('Text')}>Text</a></li>
+    <li><a onClick={()=>setSort('Video')}>Video</a></li>
   </ul>
 </div>
 
             {
-                call.map(cal=>
-                    <div className='flex items-center gap-7'>
+                (sort==='All' || sort==='Call') && call.map(cal=>
+                    <div key={cal.id} className='flex items-center gap-7'>
 <img src={i2} alt="" />
 
 <div>
-    <h1><span className='font-semibold text-[20px] text-[#244D3F]'>Meetup</span> with {cal.name}</h1>
+    <h1><span className='font-semibold text-[20px] text-[#244D3F]'>Call</span> with {cal.name}</h1>
 <p>{time}</p>
 </div>
                     </div>
@@ -41,8 +48,8 @@ let time = new Date().toLocaleDateString('en-GB', {
             }
 
             {
-                text.map(tex=>
-                        <div className='flex items-center gap-7'>
+                (sort==='All' || sort==='Text') && text.map(tex=>
+                        <div key={tex.id} className='flex items-center gap-7'>
              <img src={i3} alt="" />
              <div>
     <h1><span className='font-semibold text-[20px] text-[#244D3F]'>Text</span> with {tex.name}</h1>
@@ -53,8 +60,8 @@ let time = new Date().toLocaleDateString('en-GB', {
             }
 
             {
-                video.map(vid=>
-                    <div className='flex items-center gap-7'>
+                (sort==='All' || sort==='Video') && video.map(vid=>
+                    <div key={vid.id} className='flex items-center gap-7'>
                         <img src={i4} alt="" />
 
                         <div>
@@ -64,6 +71,8 @@ let time = new Date().toLocaleDateString('en-GB', {
                     </div>
                 )
             }
+        </div>
+}
         </div>
     );
 };
