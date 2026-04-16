@@ -1,16 +1,60 @@
-# React + Vite
+# Keen-keeper
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**A personal connection tracker for staying in touch with the people that matter.**
 
-Currently, two official plugins are available:
+Keen-keeper is a relationship management app that helps you maintain meaningful connections. You can log calls, texts, and video chats with your contacts, and the app visualizes your communication activity so you always know who you've been keeping up with — and who might need a catch-up.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+🔗 **Live Site:** [msayeem.github.io/Keen-keeper](https://msayeem.github.io/Keen-keeper/)
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the ESLint configuration
+**Multi-Channel Communication Logging**
+Track every type of interaction — calls, texts, and video chats — all in one place. Each contact's communication history is stored and organized so you have a clear picture of your relationships over time.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+**Activity Chart**
+An interactive chart powered by Recharts visualizes the breakdown of your calls, texts, and video sessions at a glance, making it easy to see where you're spending your connection time.
+
+**Responsive, Clean Interface**
+Built with Tailwind CSS and DaisyUI, the app is designed to feel fast and uncluttered on any screen size — whether you're checking in from your phone or desktop.
+
+---
+
+## Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| React.js | UI framework |
+| Vite | Build tool and dev server |
+| React Router | Client-side routing |
+| Tailwind CSS + DaisyUI | Styling and components |
+| Recharts | Activity chart |
+| React-Toastify | Notifications |
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) v18 or higher
+- npm (included with Node.js)
+
+### Installation
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/Msayeem/Keen-keeper.git
+
+# 2. Navigate into the project folder
+cd Keen-keeper
+
+# 3. Install dependencies
+npm install
+
+# 4. Start the development server
+npm run dev
+```
+
+Open the local URL shown in your terminal — typically `http://localhost:5173`.
