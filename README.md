@@ -10,13 +10,13 @@ Keen-keeper is a relationship management app that helps you maintain meaningful 
 
 ## Features
 
-**Multi-Channel Communication Logging**
+**Multi-Channel Communication Logging :**
 Track every type of interaction — calls, texts, and video chats — all in one place. Each contact's communication history is stored and organized so you have a clear picture of your relationships over time.
 
-**Activity Chart**
+**Activity Chart :**
 An interactive chart powered by Recharts visualizes the breakdown of your calls, texts, and video sessions at a glance, making it easy to see where you're spending your connection time.
 
-**Responsive, Clean Interface**
+**Responsive, Clean Interface :**
 Built with Tailwind CSS and DaisyUI, the app is designed to feel fast and uncluttered on any screen size — whether you're checking in from your phone or desktop.
 
 ---
