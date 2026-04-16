@@ -29,9 +29,9 @@ toast.success('New Video added to Timeline')
     };
    
     return (
-        <div className='pt-15 lg:w-[70%] md:w-[85%] w-[90%] mx-auto grid md:grid-cols-4  gap-5  items-center'>
+        <div className='pt-15 lg:w-[70%] md:w-[85%] w-[90%] mx-auto grid grid-cols-1  md:grid-cols-4  gap-5  items-center'>
             
-<div className='text-center col-span-1 space-y-2.5 '>
+<div className='text-center  col-span-1 space-y-2.5 flex flex-col items-center w-full mx-auto'>
   <img className='mx-auto rounded-full' src={expectedFriends.picture} alt="" />
   <h1 className='font-semibold text-[18px]'>{expectedFriends.name}</h1>
   <span className={`${expectedFriends.status=='Almost Due' ? 'badge badge-warning': ''} ${expectedFriends.status=='Overdue' ? 'badge badge-error text-white' : ''} ${expectedFriends.status=='On Track' ? 'badge badge-success':''} `}>{expectedFriends.status}</span>
@@ -52,7 +52,7 @@ toast.success('New Video added to Timeline')
 </div>
 </div>
 
-<div className='col-span-3 md:w-[75%] mx-auto'>
+<div className='md:col-span-3 col-span-1 md:w-[75%] mx-auto'>
 
     <div className='flex justify-between gap-5 mb-5'>
         <div className='text-center'>
