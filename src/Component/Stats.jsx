@@ -6,6 +6,12 @@ const Stats = () => {
 
 let {call, text, video}=useContext(FriendContext);
 
+let total=call.length+text.length+video.length;
+
+
+ if(total==0){
+  return <p className='flex justify-center items-center mt-20 md:text-3xl text-2xl font-medium'><em>No Connections yet....</em></p>
+}
 
     const data = [
   { name: 'Call', value: call.length, fill: '#0088FE' },
@@ -20,6 +26,8 @@ let {call, text, video}=useContext(FriendContext);
                 <h1 className='md:text-4xl text-3xl font-bold'>Friendship Analytics</h1>
              <p className='text-[#244D3F] font-medium text-[18px]'>By Interaction Type</p>
              </div>
+
+             
 
         <div className=' flex justify-center items-center py-20 '>
               <PieChart style={{ width: '100%', maxWidth: '500px', maxHeight: '80vh', aspectRatio: 1 }} responsive>

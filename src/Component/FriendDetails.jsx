@@ -29,9 +29,9 @@ toast.success('New Video added to Timeline')
     };
    
     return (
-        <div className='pt-15 lg:w-[70%] md:w-[85%] w-[90%] mx-auto grid md:grid-cols-4  gap-5'>
+        <div className='pt-15 lg:w-[70%] md:w-[85%] w-[90%] mx-auto grid md:grid-cols-4  gap-5  items-center'>
             
-<div className='text-center col-span-1 space-y-2.5'>
+<div className='text-center col-span-1 space-y-2.5 '>
   <img className='mx-auto rounded-full' src={expectedFriends.picture} alt="" />
   <h1 className='font-semibold text-[18px]'>{expectedFriends.name}</h1>
   <span className={`${expectedFriends.status=='Almost Due' ? 'badge badge-warning': ''} ${expectedFriends.status=='Overdue' ? 'badge badge-error text-white' : ''} ${expectedFriends.status=='On Track' ? 'badge badge-success':''} `}>{expectedFriends.status}</span>
@@ -52,7 +52,7 @@ toast.success('New Video added to Timeline')
 </div>
 </div>
 
-<div className='col-span-3 w-[75%] mx-auto'>
+<div className='col-span-3 md:w-[75%] mx-auto'>
 
     <div className='flex justify-between gap-5 mb-5'>
         <div className='text-center'>
@@ -71,7 +71,7 @@ toast.success('New Video added to Timeline')
 
     <div className='flex items-center justify-between py-5'>
         <h1 className='text-[#244D3F] font-semibold'>Relationship Goal</h1>
-        <p className='text-[#244D3F] font-semibold'>Edit</p>
+        <button className='btn text-[#244D3F] font-semibold'>Edit</button>
     </div>
 
     <h1 className='pb-10'>Connect every <b>{expectedFriends.goal} Days</b></h1>
